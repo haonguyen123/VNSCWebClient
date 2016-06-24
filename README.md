@@ -1,0 +1,2 @@
+# VNSCWebClient
+Test for VNSCwebservice
