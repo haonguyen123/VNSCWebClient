@@ -1,0 +1,89 @@
+<?xml version='1.0' encoding='UTF-8'?><!-- Published by JAX-WS RI at http://jax-ws.dev.java.net. RI's version is Metro/2.3 (tags/2.3-7528; 2013-04-29T19:34:10+0000) JAXWS-RI/2.2.8 JAXWS/2.2 svn-revision#unknown. --><xs:schema xmlns:tns="http://VNSCweb.apache.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0" targetNamespace="http://VNSCweb.apache.org/">
+
+<xs:element name="DescribeRecord" type="tns:DescribeRecord"/>
+
+<xs:element name="DescribeRecordResponse" type="tns:DescribeRecordResponse"/>
+
+<xs:element name="FileDownload" type="tns:FileDownload"/>
+
+<xs:element name="FileDownloadResponse" type="tns:FileDownloadResponse"/>
+
+<xs:element name="GetCapabilities" type="tns:GetCapabilities"/>
+
+<xs:element name="GetCapabilitiesResponse" type="tns:GetCapabilitiesResponse"/>
+
+<xs:element name="GetDomain" type="tns:GetDomain"/>
+
+<xs:element name="GetDomainResponse" type="tns:GetDomainResponse"/>
+
+<xs:element name="JAXBException" type="tns:JAXBException"/>
+
+<xs:complexType name="FileDownload">
+<xs:sequence>
+<xs:element name="name" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="FileDownloadResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:base64Binary" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="GetDomain">
+<xs:sequence>
+<xs:element name="arg0" type="xs:string" minOccurs="0"/>
+<xs:element name="arg1" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="GetDomainResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:boolean"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="GetCapabilities">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="GetCapabilitiesResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:capabilitiesRequest" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="capabilitiesRequest">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="JAXBException">
+<xs:sequence>
+<xs:element name="errorCode" type="xs:string" minOccurs="0"/>
+<xs:element name="linkedException" type="tns:throwable" minOccurs="0"/>
+<xs:element name="message" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="throwable">
+<xs:sequence>
+<xs:element name="stackTrace" type="tns:stackTraceElement" nillable="true" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="stackTraceElement" final="extension restriction">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="DescribeRecord">
+<xs:sequence>
+<xs:element name="name" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="DescribeRecordResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+</xs:schema>
